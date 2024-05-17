@@ -9,7 +9,7 @@ entries:
     name: dtls_server
     type: application
     urls:
-    - https://github.com/JoseMJuni/chart-repo/charts/dtls_server-0.1.0.tgz
+    - https://josemjuni.github.io/chart-repo/charts/dtls_server-0.1.0.tgz
     version: 0.1.0
   snort:
   - apiVersion: v2
@@ -20,6 +20,6 @@ entries:
     name: snort
     type: application
     urls:
-    - https://github.com/JoseMJuni/chart-repo/charts/snort-0.1.0.tgz
+    - https://josemjuni.github.io/chart-repo/charts/snort-0.1.0.tgz
     version: 0.1.0
 generated: "2024-05-17T10:36:18.724801483Z"

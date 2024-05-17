@@ -1,0 +1,26 @@
+apiVersion: v1
+entries:
+  dtls_server:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-05-17T10:30:54.595505053Z"
+    description: A Helm chart for Kubernetes
+    digest: 7622c5da67fb01c108bc7b9fce3d95efa106e44c44fa8029c7c9e2cc5b6ae3cf
+    name: dtls_server
+    type: application
+    urls:
+    - charts/dtls_server-0.1.0.tgz
+    version: 0.1.0
+  snort:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-05-17T10:30:54.596210282Z"
+    description: A Helm chart for Kubernetes for deploy SNORT
+    digest: 54c2decf09cbd06cf41e2eb5c336ef3d1196bd6ec9609a2e2859ebd36de30d69
+    name: snort
+    type: application
+    urls:
+    - charts/snort-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-05-17T10:30:54.594219084Z"
+ 

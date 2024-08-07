@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-linux-cn
+  labels:
+    helm.sh/chart: linux-cn-0.1.0
+    app.kubernetes.io/name: linux-cn
+    app.kubernetes.io/instance: test
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: linux-cn
+      app.kubernetes.io/instance: test
+  template:
+    metadata:
+      annotations:
+          k8s.v1.cni.cncf.io/networks: '[{
+            "name": "ovs-net-1-static",
+            "namespace": "default",
+            "interface": "ovs1",
+            "ips": ["10.10.10.1/24"]
+          }]'
+      labels:
+        helm.sh/chart: linux-cn-0.1.0
+        app.kubernetes.io/name: linux-cn
+        app.kubernetes.io/instance: test
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      containers:
+        - name: attacker
+          image: "alpine:3"
+          command: [/bin/sh]
+          args: [-c while true; do sleep 30; done;]
+          securityContext:
+            capabilities:
+              add: ["NET_ADMIN"]
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "apk update && apk add iputils openssh"]

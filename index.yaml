@@ -6,7 +6,7 @@ entries:
     created: "2024-05-17T10:36:18.726201246Z"
     description: A Helm chart for Kubernetes
     digest: 7622c5da67fb01c108bc7b9fce3d95efa106e44c44fa8029c7c9e2cc5b6ae3cf
-    name: dtls_server
+    name: dtlsserver
     type: application
     urls:
     - https://josemjuni.github.io/chart-repo/charts/dtls_server-0.1.0.tgz
